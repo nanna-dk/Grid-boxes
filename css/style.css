@@ -17,7 +17,10 @@ body {
 #container {
     width: 235px;
 }
-
+.cms-override, #wrapper img {
+    max-width: initial!important;
+    height: auto!important;
+}
 .gridbox {
     font-size: 14px;
     line-height: 18px;
@@ -67,10 +70,18 @@ body {
 }
 
 .row-order.img-right .img-flex img {
+    -webkit-transform: translate(-20%, -40%);
+    -moz-transform: translate(-20%, -40%);
+    -o-transform: translate(-20%, -40%);
+    -ms-transform: translate(-20%, -40%);
     transform: translate(-20%, -40%);
 }
 
 .row-order.img-left .img-flex img {
+    -webkit-transform: translate(-20%, -40%);
+    -moz-transform: translate(-20%, -40%);
+    -o-transform: translate(-20%, -40%);
+    -ms-transform: translate(-20%, -40%);
     transform: translate(-20%, -40%);
 }
 
@@ -108,7 +119,6 @@ body {
     padding: 7px 25px 8px 12px;
     position: relative;
     z-index: 3;
-    box-sizing: border-box;
 }
 
 .gridbox-small {

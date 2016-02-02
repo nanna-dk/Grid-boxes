@@ -72,13 +72,11 @@ var run55 = function() {
     if (text) {
         $('.gridbox-text').text(text);
     }
-
     if ($('.checkbox-border').is(':checked')) {
         $targetbox.addClass('with-border');
     } else {
         $targetbox.removeClass('with-border');
     }
-
     if ($('.checkbox-55-no-img').is(':checked')) {
         $targetbox.removeClass('row-order img-left img-right');
         $targetbox.find('.img-flex').hide();
