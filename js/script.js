@@ -214,7 +214,7 @@ var size = function() {
 }
 
 var reset = function() {
-    $('select').prop('selectedIndex',0);
+    $('select:not(#height)').prop('selectedIndex',0);
     $('input[type="checkbox"]').prop("checked", false);
 }
 
