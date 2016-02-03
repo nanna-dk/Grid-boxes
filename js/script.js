@@ -214,8 +214,8 @@ var size = function() {
 }
 
 var reset = function() {
-    $('#form').find('.checkbox-border-top').prop("checked", false);
-    $('#form').find('#fak-colors option:selected').prop("selected", false);
+    $('select').prop('selectedIndex',0);
+    $('input[type="checkbox"]').prop("checked", false);
 }
 
 var preCode = function() {
