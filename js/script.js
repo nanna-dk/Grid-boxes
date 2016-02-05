@@ -163,7 +163,7 @@ var run133 = function() {
         $targetbox.addClass('with-img');
         $targetbox.find('.box2 img').remove();
         $targetbox.find('.box2').show();
-        $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/science.jpg" alt="Test">');
+        $targetbox.find('.box2').text('').append('<img src="http://placehold.it/600x400" alt="Test">');
     } else {
         $targetbox.removeClass('with-img');
         $targetbox.find('.box2').show().text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.');
@@ -187,7 +187,7 @@ var run185 = function() {
         return this.value ? this.value : null;
     }).get().join(' ');
     $targetbox.removeClass(allClassess).addClass(classesToAdd);
-    $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/science.jpg" alt="Test">');
+    $targetbox.find('.box2').text('').append('<img src="http://placehold.it/600x400" alt="Test">');
     if ($('.checkbox-border-top').is(':checked')) {
         $targetbox.addClass('border-top');
     } else {
