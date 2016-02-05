@@ -48,6 +48,7 @@ body {
     position: relative;
 }
 .box1 {
+    height: 100%;
     z-index: 4;
 }
 .box2 {
