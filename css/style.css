@@ -47,7 +47,12 @@ body {
     width: 100%;
     position: relative;
 }
-
+.box1 {
+    z-index: 4;
+}
+.box2 {
+    padding: 15px;
+}
 .height55 {
     height: 55px;
     -webkit-flex-direction: row;
@@ -69,10 +74,6 @@ body {
 
 .height289 {
     height: 289px;
-}
-
-.box2 {
-    padding: 15px;
 }
 
 .with-img .box2 {
