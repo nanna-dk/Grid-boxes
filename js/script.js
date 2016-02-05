@@ -6,26 +6,25 @@ $('#fak-colors').change(function() {
         $('.checkbox-border-top').prop("checked", true);
     }
 });
+
 var $selects = $("#height");
+var $targetbox = $(".gridbox");
+var $html = '<div class="box1"><div class="header">Header</div></div><div class="box2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>';
 $selects.change(function() {
+    $('.container, .box').hide();
     if ($(this).find(":selected").val() == "height55") {
-        $('.container, .box').hide();
         $('.box55').fadeIn();
     }
     if ($(this).find(":selected").val() == "height133") {
-        $('.container, .box').hide();
         $('.box133').fadeIn();
     }
     if ($(this).find(":selected").val() == "height185") {
-        $('.container, .box').hide();
         $('.box185').fadeIn();
     }
     if ($(this).find(":selected").val() == "height81") {
-        $('.container, .box').hide();
         $('.box81').fadeIn();
     }
     if ($(this).find(":selected").val() == "height289") {
-        $('.container, .box').hide();
         $('.box289').fadeIn();
     }
     reset();
@@ -33,6 +32,7 @@ $selects.change(function() {
 });
 
 $("#go").click(function() {
+    $targetbox.html($html);
     if ($selects.find(":selected").val() == "height289") {
         run289();
     }
@@ -52,9 +52,11 @@ $("#go").click(function() {
     preCode();
 });
 
+
 var run55 = function() {
+    var $titel = $("#titel").val();
+    var $text = $("#text").val();
     var $selects = $(".settings55");
-    var $targetbox = $("#content81 .gridbox");
     var classesToAdd = $selects.find("option[value]:selected").map(function() {
         return this.value;
     }).get().join(' ');
@@ -62,33 +64,46 @@ var run55 = function() {
         return this.value ? this.value : null;
     }).get().join(' ');
     $targetbox.removeClass(allClassess).addClass(classesToAdd);
-    $('.img-flex').remove();
-    $('<div class="img-flex"><img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/science.jpg" alt="Test"></div>').insertAfter($targetbox.find('.gridbox-content'));
-    var titel = $("#titel").val();
-    var text = $("#text").val();
-    if (titel) {
-        $('.inline-titel').text(titel);
-    }
-    if (text) {
-        $('.gridbox-text').text(text);
-    }
-    if ($('.checkbox-border').is(':checked')) {
-        $targetbox.addClass('with-border');
+    $targetbox.find('.box2').text('').append('<img src="http://placehold.it/450x400" alt="Test">');
+
+    if ($('.checkbox-header-only').is(':checked')) {
+        $targetbox.addClass('header-only');
     } else {
-        $targetbox.removeClass('with-border');
+        $targetbox.removeClass('header-only');
     }
+    if ($('.checkbox-header-text').is(':checked')) {
+        $('<div class="text">Nye rundvisninger</div>').insertAfter($targetbox.find('.box1 .header'));
+    } else {
+        $targetbox.find('.text').remove();
+    }
+
     if ($('.checkbox-55-no-img').is(':checked')) {
-        $targetbox.removeClass('row-order img-left img-right');
-        $targetbox.find('.img-flex').hide();
+        $targetbox.removeClass('with-img img-right img-left');
+        $targetbox.find('.box2').hide();
     } else {
-        $targetbox.find('.img-flex').show();
+        $targetbox.addClass('with-img');
+        $targetbox.find('.box2 img').remove();
+        $targetbox.find('.box2').show();
+        $targetbox.find('.box2').text('').append('<img src="http://placehold.it/450x400" alt="Test">');
     }
-    $("#content81").fadeIn();
+    if ($targetbox.hasClass('img-right')) {
+        $targetbox.removeClass('icon-arrow');
+    } else {
+        $targetbox.addClass('icon-arrow');
+    }
+    if ($titel) {
+        $targetbox.find('.header').text($titel);
+    }
+    if ($text) {
+        $targetbox.find('.text').text($text);
+    }
+    $(".container").fadeIn();
 }
 
 var run81 = function() {
+    var $titel = $("#titel").val();
+    var $text = $("#text").val();
     var $selects = $(".settings81");
-    var $targetbox = $("#content81 .gridbox");
     var classesToAdd = $selects.find("option[value]:selected").map(function() {
         return this.value;
     }).get().join(' ');
@@ -96,32 +111,37 @@ var run81 = function() {
         return this.value ? this.value : null;
     }).get().join(' ');
     $targetbox.removeClass(allClassess).addClass(classesToAdd);
-    var titel = $("#titel").val();
-    var text = $("#text").val();
-    if (titel) {
-        $('.inline-titel').text(titel);
-    }
-    if (text) {
-        $('.gridbox-text').text(text);
-    }
-    if ($('.checkbox-border').is(':checked')) {
-        $targetbox.addClass('with-border');
+
+    if ($('.checkbox-header-only').is(':checked')) {
+        $targetbox.addClass('header-only');
+        $targetbox.find('.box2').hide();
     } else {
-        $targetbox.removeClass('with-border');
+        $targetbox.removeClass('header-only');
+        $targetbox.find('.box2').show();
+    }
+    if ($('.checkbox-header-text').is(':checked')) {
+        $targetbox.find('.box2').show();
+    } else {
+        $targetbox.find('.box2').hide();
     }
     if ($('.checkbox-border-top').is(':checked')) {
         $targetbox.addClass('border-top');
     } else {
         $targetbox.removeClass('border-top');
     }
-    $("#content81").fadeIn();
+    if ($titel) {
+        $targetbox.find('.header').text($titel);
+    }
+    if ($text) {
+        $targetbox.find('.box2').text($text);
+    }
+    $(".container").fadeIn();
 }
 
 var run133 = function() {
+    var $titel = $("#titel").val();
+    var $text = $("#text").val();
     var $selects = $(".settings");
-    var $targetbox = $("#content133 .gridbox");
-    var titel = $("#titel").val();
-    var text = $("#text").val();
     var classesToAdd = $selects.find("option[value]:selected").map(function() {
         return this.value;
     }).get().join(' ');
@@ -129,44 +149,37 @@ var run133 = function() {
         return this.value ? this.value : null;
     }).get().join(' ');
     $targetbox.removeClass(allClassess).addClass(classesToAdd);
-    $('.gridbox-small').remove();
-    if (titel) {
-        $targetbox.find('.gridbox-titel').text(titel).append('<span class="icon-arrow"></span>');
-    }
-    if (text) {
-        $targetbox.find('.gridbox-content').text(text);
-    }
-    if ($('.checkbox-border').is(':checked')) {
-        $targetbox.addClass('with-border');
+    if ($('.checkbox-border-top').is(':checked')) {
+        $targetbox.addClass('border-top');
     } else {
-        $targetbox.removeClass('with-border');
+        $targetbox.removeClass('border-top');
+    }
+    if ($('.checkbox-titel-down').is(':checked')) {
+        $targetbox.addClass('text-down');
+    } else {
+        $targetbox.removeClass('text-down');
     }
     if ($('.checkbox-img').is(':checked')) {
         $targetbox.addClass('with-img');
-        $targetbox.find('.gridbox-titel').addClass('up');
-        $targetbox.find('.gridbox-content').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/ku.jpg" alt="">');
+        $targetbox.find('.box2 img').remove();
+        $targetbox.find('.box2').show();
+        $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/science.jpg" alt="Test">');
     } else {
         $targetbox.removeClass('with-img');
-        $targetbox.find('.gridbox-titel').removeClass('up');
-        $targetbox.find('.gridbox-content img').hide();
-        $targetbox.find('.gridbox-content').text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.');
+        $targetbox.find('.box2').show().text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.');
     }
-    if ($('.checkbox-titel-down').is(':checked')) {
-        $targetbox.find('.gridbox-titel').removeClass('up').addClass('down');
-    } else {
-        $targetbox.find('.gridbox-titel').removeClass('down');
+    if ($titel) {
+        $targetbox.find('.header').text($titel);
     }
-    if ($('.checkbox-border-top').is(':checked')) {
-        $targetbox.addClass('border-top');
-    } else {
-        $targetbox.removeClass('border-top');
+    if ($text) {
+        $targetbox.find('.box2').text($text);
     }
-    $("#content133").fadeIn();
+    $(".container").fadeIn();
 }
 
 var run185 = function() {
+    var $titel = $("#titel").val();
     var $selects = $(".settings185");
-    var $targetbox = $("#content133 .gridbox");
     var classesToAdd = $selects.find("option[value]:selected").map(function() {
         return this.value;
     }).get().join(' ');
@@ -174,22 +187,20 @@ var run185 = function() {
         return this.value ? this.value : null;
     }).get().join(' ');
     $targetbox.removeClass(allClassess).addClass(classesToAdd);
-    $targetbox.find('.gridbox-content').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/ku.jpg" alt="">');
-    var titel = $("#titel").val();
-    if (titel) {
-        $('.gridbox-titel').text(titel).append('<span class="icon-arrow"></span>');
-    }
+    $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/science.jpg" alt="Test">');
     if ($('.checkbox-border-top').is(':checked')) {
         $targetbox.addClass('border-top');
     } else {
         $targetbox.removeClass('border-top');
     }
-    $("#content133").fadeIn();
+    if ($titel) {
+        $targetbox.find('.header').text($titel);
+    }
+    $(".container").fadeIn();
 }
 var run289 = function() {
+    var $titel = $("#titel").val();
     var $selects = $(".settings289");
-    var $targetbox = $("#content289 .gridbox");
-    var titel = $("#titel").val();
     var classesToAdd = $selects.find("option[value]:selected").map(function() {
         return this.value;
     }).get().join(' ');
@@ -197,13 +208,16 @@ var run289 = function() {
         return this.value ? this.value : null;
     }).get().join(' ')
     $targetbox.removeClass(allClassess).addClass(classesToAdd);
-    $targetbox.addClass('grey-full');
-    $('.gridbox-small').remove();
-    $('.gridbox-titel').prepend('<div class="gridbox-small">Teaser tekst</div>');
-    if (titel) {
-        $('.gridbox-titel').text(titel).prepend('<div class="gridbox-small">Teaser tekst</div>');
+
+    $targetbox.addClass('grey-full text-down');
+    $targetbox.find('.gridbox-small, .header').remove();
+    $targetbox.find('.box1').append('<div class="gridbox-small">Teaser tekst</div>');
+    $targetbox.find('.box1').append('<div class="text">Nye rundvisninger i botanisk have. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>');
+    $targetbox.find('.box2').text('').append('<img src="http://placehold.it/500x400" alt="Test">');
+    if ($titel) {
+        $targetbox.find('.text').text($titel);
     }
-    $("#content289").fadeIn();
+    $(".container").fadeIn();
 }
 
 var size = function() {
@@ -214,8 +228,11 @@ var size = function() {
 }
 
 var reset = function() {
-    $('select:not(#height)').prop('selectedIndex',0);
+    $('select:not(#height)').prop('selectedIndex', 0);
     $('input[type="checkbox"]').prop("checked", false);
+    $('input[type="text"]').val('');
+    $targetbox.removeClass().addClass('gridbox');
+    $targetbox.html($html);
 }
 
 var preCode = function() {

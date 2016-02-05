@@ -1,107 +1,121 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html itemscope itemtype="https://schema.org/" lang="en-US">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <style type="text/css">
-    #result {
-        margin-top: 25px;
-    }
-    
-    pre {
-        display: block;
-        padding: 9px;
-        margin: 0 0 10px;
-        font-size: 13px;
-        line-height: 1.42857143;
-        color: #333;
-        word-break: break-all;
-        word-wrap: break-word;
-        background-color: #f5f5f5;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-    
-    #form {
-        margin: 10px 30px;
-        width: 32%;
-        float: left;
-        background-color: #f5f5f5;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        padding: 15px; 
-    }
-    
-    #form input[type="text"],
-    #form select {
-        height: 34px;
-        padding: 2px 5px;
-        font-size: 14px;
-        line-height: 1;
-    }
-    
-    button {
-        padding: 6px 12px;
-        margin-bottom: 0;
-        font-size: 14px;
-        text-align: center;
-    }
-    
-    .newboxes {
-        width: 60%;
-        float: left;
-        margin: 10px;
-    }
-    
-    h4 {
-        clear: both;
-    }
-    
-    #size {
-        float: right;
-        width: 41%;
-        font-size: 12px;
-        text-align: right;
-    }
-    
-    .container {
-        width: 235px;
-    }
-    
-    .pull-left {
-        float: left;
-    }
-    
-    .box {
-        margin-bottom: 15px;
-    }
-    
-    .box55,
-    .box81,
-    .box185,
-    .box289,
-    .container {
-        display: none;
-    }
-    
-    .box133,
-    #content133 {
-        display: block;
-    }
-    </style>
+    <meta charset="UTF-8">
+    <title>Flex</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
 </head>
+<style type="text/css">
+#result {
+    margin-top: 25px;
+}
+
+pre {
+    display: block;
+    padding: 9px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#form {
+    margin: 10px 30px;
+    width: 32%;
+    float: left;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+#form input[type="text"],
+#form select {
+    height: 34px;
+    padding: 2px 5px;
+    font-size: 14px;
+    line-height: 1;
+}
+
+button {
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.newboxes {
+    width: 60%;
+    float: left;
+    margin: 10px;
+}
+
+h4 {
+    clear: both;
+}
+
+#size {
+    float: right;
+    width: 41%;
+    font-size: 12px;
+    text-align: right;
+}
+
+.divider {
+    clear: both;
+}
+
+.width235 {
+    width: 235px;
+}
+
+.width354 {
+    width: 354px;
+}
+
+.width480 {
+    width: 480px;
+}
+.width733 {
+    width: 733px;
+}
+.pull-left {
+    float: left;
+}
+
+.box {
+    margin-bottom: 15px;
+    margin-right: 10px;
+}
+
+.box55,
+.box81,
+.box185,
+.box289,
+.container {
+    display: none;
+}
+
+.box133,
+#content133 {
+    display: block;
+}
+</style>
 
 <body>
     <form id="form">
         <div id="size"></div>
         <h3>Konfigurering af gridbokse</h3>
-        <div class="box box133 box55 box81 box185 box289">
+        <div class="box pull-left box133 box55 box81 box185 box289">
             <label>Højde:</label>
             <select id="height" class="settings settings55 settings81 settings133 settings185 settings289">
                 <option value="height289">289px</option>
@@ -110,12 +124,17 @@
                 <option value="height81">81px</option>
                 <option value="height55">55px</option>
             </select>
-            <!-- <select id="width" class="settings settings55 settings81 settings133 settings185 settings289">
+        </div>
+        <div class="box pull-left box133 box55 box81 box185 box289">
+            <label>Bredde (kolonner):</label>
+            <select id="width" class="settings settings55 settings81 settings133 settings185 settings289">
                 <option value="width235" selected>1/3</option>
                 <option value="width354">1/2</option>
                 <option value="width480">2/3</option>
-            </select> -->
+                <option value="width733">Fuld bredde</option>
+            </select>
         </div>
+        <div class="divider"></div>
         <div class="box box133 box55 box81 box185 box289">
             <label>Titeltekst:</label>
             <input type="text" id="titel" size="25">
@@ -149,20 +168,22 @@
                 <option value="white-full">Hvid</option>
             </select>
         </div>
-        <div class="box pull-left box133 box81 box55">
-            <label>Med kant:</label>
-            <input type="checkbox" checked class="checkbox-border">
-        </div>
-        <div class="box box81">
+        <div class="box box55 box81 box133">
             <label>Farve på kant:</label>
-            <select class="settings81">
+            <select class="settings settings55 settings81">
                 <option>- Vælg -</option>
-                <option value="brown" selected>Brun</option>
-                <option value="red">Rød</option>
-                <option value="blue">Blå</option>
-                <option value="green">Grøn</option>
-                <option value="grey">Grå</option>
-                <option value="white">Hvid</option>
+                <option value="brown-border" selected>Brun</option>
+                <option value="ku-red-border">Rød</option>
+                <option value="blue-border">Blå</option>
+                <option value="green-border">Grøn</option>
+                <option value="ku-grey-border">Grå</option>
+                <option value="ku-grey-border">Hvid</option>
+                <option value="teol-border">Teologi</option>
+                <option value="sund-border">Sund</option>
+                <option value="science-border">Science</option>
+                <option value="samf-border">Samf</option>
+                <option value="jura-border">Jura</option>
+                <option value="hum-border">Hum</option>
             </select>
         </div>
         <div class="box pull-left box133">
@@ -193,8 +214,8 @@
         <div class="box box55">
             <label>Billede til højre eller venstre:</label>
             <select class="settings55">
-                <option value="row-order img-left">Venstrestillet billede</option>
-                <option value="row-order img-right">Højrestillet billede</option>
+                <option value="img-left">Venstrestillet billede</option>
+                <option value="img-right">Højrestillet billede</option>
             </select>
         </div>
         <div class="box box55">
@@ -202,45 +223,27 @@
             <input type="checkbox" class="checkbox-55-no-img">
         </div>
         <div class="box box55 box81">
-            <label>Titel og/eller brødtekst</label>
-            <select class="settings55 settings81">
-                <option value="titel-only">Kun titel</option>
-                <option value="titel-text" selected>Titel og brødtekst</option>
-            </select>
+            <label>Kun titel</label>
+            <input type="checkbox" class="checkbox-header-only">
+            <label>Titel og brødtekst</label>
+            <input type="checkbox" class="checkbox-header-text">
         </div>
         <button type="button" id="go">Vis boks!</button>
     </form>
     <div class="newboxes">
         <h3>Resultat</h3>
-        <!-- Højde 133px + 185px -->
-        <div id="content133" class="container" style="display:none">
-            <div class="gridbox">
-                <div class="gridbox-titel">Nye rundvisninger i botanisk have<span class="icon-arrow"></span></div>
-                <div class="gridbox-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</div>
-            </div>
-        </div>
-        <!-- Højde 81px og 55px -->
-        <div id="content81" class="container" style="display:none">
-            <div class="gridbox">
-                <div class="gridbox-content">
-                    <div class="inline-titel">Overskrift</div>
-                    <span class="gridbox-text">Dato og tidspunkt</span><span class="icon-arrow down"></span>
+        <div class="container" style="display:none">
+            <div class="gridbox height133 red-full icon-arrow">
+                <div class="box1">
+                    <div class="header">Header</div>
                 </div>
-            </div>
-        </div>
-        <!-- Højde 289px -->
-        <div id="content289" class="container" style="display:none">
-            <div class="gridbox">
-                <div class="gridbox-titel down">
-                    <div class="gridbox-small">Teaser tekst</div>Nye rundvisninger i botanisk have
-                </div>
-                <div class="gridbox-content"><img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/ku.jpg" alt=""></div>
+                <div class="box2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
             </div>
         </div>
         <!-- Display code -->
         <div id="result"><pre style="display:none"></pre></div>
     </div>
-    <script type="text/javascript" src="js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
