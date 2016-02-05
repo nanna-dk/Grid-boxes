@@ -99,6 +99,7 @@ body {
     -webkit-order: 2;
     -ms-flex-order: 2;
     order: 2;
+    height: auto;
     /*position: absolute;
     bottom: 0;
     left: 0;
