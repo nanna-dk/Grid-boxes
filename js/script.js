@@ -231,7 +231,7 @@ var reset = function() {
     $('select:not(#height)').prop('selectedIndex', 0);
     $('input[type="checkbox"]').prop("checked", false);
     $('input[type="text"]').val('');
-    $targetbox.removeClass().addClass('gridbox');
+    $targetbox.removeClass().addClass('gridbox icon-arrow');
     $targetbox.html($html);
 }
 
