@@ -109,6 +109,9 @@ body {
     z-index: 2;
     opacity: 0.96;*/
 }
+.text-down .box2 {
+    min-height: 96px;
+}
 .box1 .header {
     color: #666;
 }
