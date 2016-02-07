@@ -13,11 +13,6 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-overflow-scrolling: touch;
 }
-/*Cms override */
-#wrapper img {
-    height: auto;
-    max-width: initial!important;
-}
 .gridbox {
     font-size: 14px;
     line-height: 18px;
@@ -31,9 +26,9 @@ body {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-align-content: space-around;
-    -ms-flex-line-pack: distribute;
-    align-content: space-around;
+    -webkit-align-content: space-between;
+    -ms-flex-line-pack: justify;
+    align-content: space-between;
 }
 
 .gridbox .header {
@@ -57,6 +52,7 @@ body {
 .box2 {
     padding: 15px;
 }
+
 .height55 {
     height: 55px;
     -webkit-flex-direction: row;
@@ -103,14 +99,20 @@ body {
     -ms-flex-order: 2;
     order: 2;
     height: 100%;
-    /*position: absolute;
+    /*min-height: 52px;
+    position: absolute;
     bottom: 0;
     left: 0;
     z-index: 2;
     opacity: 0.96;*/
 }
 .text-down .box2 {
-    min-height: 96px;
+    /*min-height: 81px;*/
+}
+.text-down:not(.height55) .header {
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 .box1 .header {
     color: #666;
@@ -297,10 +299,9 @@ body {
     color: #365aa5;
 }
 
-
-/* FAK-farver */
-
-[class*='icon-']:before {
+/* FAK-farver end */
+/*Arrow on header on top:*/
+.icon-arrow:before {
     display: inline-block;
     font-family: 'arrow';
     font-style: normal;
@@ -311,14 +312,12 @@ body {
     content: '\0043';
     color: #fff;
     font-size: 11px;
+    top: 10px;
     right: 5px;
     position: absolute;
     z-index: 5;
 }
-/*Arrow on header on top:*/
-.icon-arrow:before {
-    top: 10px;
-}
+
 /*Arrow on header at bottom:*/
 .text-down.icon-arrow:before {
     bottom: 10px;
@@ -418,7 +417,6 @@ body {
     -webkit-transform: none;
             transform: none;
 }
-
 .hidden {
     display: none;
 }
@@ -427,4 +425,9 @@ body {
 :after,
 :before {
     box-sizing: border-box;
+}
+/*Cms override */
+#wrapper img {
+    height: auto!important;
+    max-width: initial!important;
 }
