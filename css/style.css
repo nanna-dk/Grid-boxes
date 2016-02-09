@@ -112,6 +112,7 @@ body {
     transform: translate(-10%, -40%);
     height: 100%!important;
     max-width: initial!important;
+    display: block;
 }
 
 .text-down {

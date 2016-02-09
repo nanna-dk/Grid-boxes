@@ -64,7 +64,7 @@ var run55 = function() {
         return this.value ? this.value : null;
     }).get().join(' ');
     $targetbox.removeClass(allClassess).addClass(classesToAdd);
-    $targetbox.find('.box2').text('').append('<img src="http://placehold.it/450x400" alt="Test">');
+    $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/college-student.jpg" alt="Test">');
 
     if ($('.checkbox-header-only').is(':checked')) {
         $targetbox.addClass('header-only');
@@ -84,7 +84,7 @@ var run55 = function() {
         $targetbox.addClass('with-img');
         $targetbox.find('.box2 img').remove();
         $targetbox.find('.box2').show();
-        $targetbox.find('.box2').text('').append('<img src="http://placehold.it/450x400" alt="Test">');
+        $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/college-student.jpg" alt="Test">');
     }
     if ($targetbox.hasClass('img-right')) {
         $targetbox.removeClass('icon-arrow');
@@ -163,7 +163,7 @@ var run133 = function() {
         $targetbox.addClass('with-img');
         $targetbox.find('.box2 img').remove();
         $targetbox.find('.box2').show();
-        $targetbox.find('.box2').text('').append('<img src="http://placehold.it/600x400" alt="Test">');
+        $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/college-student.jpg" alt="Test">');
     } else {
         $targetbox.removeClass('with-img');
         $targetbox.find('.box2').show().text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.');
@@ -187,7 +187,7 @@ var run185 = function() {
         return this.value ? this.value : null;
     }).get().join(' ');
     $targetbox.removeClass(allClassess).addClass(classesToAdd);
-    $targetbox.find('.box2').text('').append('<img src="http://placehold.it/600x400" alt="Test">');
+    $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/college-student.jpg" alt="Test">');
     if ($('.checkbox-border-top').is(':checked')) {
         $targetbox.addClass('border-top');
     } else {
@@ -213,7 +213,7 @@ var run289 = function() {
     $targetbox.find('.gridbox-small, .header').remove();
     $targetbox.find('.box1').append('<div class="gridbox-small">Teaser tekst</div>');
     $targetbox.find('.box1').append('<div class="text">Nye rundvisninger i botanisk have. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>');
-    $targetbox.find('.box2').text('').append('<img src="http://placehold.it/500x400" alt="Test">');
+    $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/college-student.jpg" alt="Test">');
     if ($titel) {
         $targetbox.find('.text').text($titel);
     }
