@@ -56,6 +56,7 @@ $("#go").click(function() {
 var run55 = function() {
     var $titel = $("#titel").val();
     var $text = $("#text").val();
+    var $customImg = $("#get_img").val();
     var $selects = $(".settings55");
     var classesToAdd = $selects.find("option[value]:selected").map(function() {
         return this.value;
@@ -85,6 +86,10 @@ var run55 = function() {
         $targetbox.find('.box2 img').remove();
         $targetbox.find('.box2').show();
         $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/college-student.jpg" alt="Test">');
+    }
+    if ($customImg) {
+        $targetbox.find('.box2 img').attr("src", $customImg);
+        $('.checkbox-img').prop("checked", true);
     }
     if ($targetbox.hasClass('img-right')) {
         $targetbox.removeClass('icon-arrow');
@@ -141,6 +146,7 @@ var run81 = function() {
 var run133 = function() {
     var $titel = $("#titel").val();
     var $text = $("#text").val();
+    var $customImg = $("#get_img").val();
     var $selects = $(".settings");
     var classesToAdd = $selects.find("option[value]:selected").map(function() {
         return this.value;
@@ -167,6 +173,10 @@ var run133 = function() {
     } else {
         $targetbox.removeClass('with-img');
         $targetbox.find('.box2').show().text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.');
+    }
+    if ($customImg) {
+        $targetbox.find('.box2 img').attr("src", $customImg);
+        $('.checkbox-img').prop("checked", true);
     }
     if ($titel) {
         $targetbox.find('.header').text($titel);
@@ -200,6 +210,7 @@ var run185 = function() {
 }
 var run289 = function() {
     var $titel = $("#titel").val();
+    var $customImg = $("#get_img").val();
     var $selects = $(".settings289");
     var classesToAdd = $selects.find("option[value]:selected").map(function() {
         return this.value;
@@ -214,6 +225,9 @@ var run289 = function() {
     $targetbox.find('.box1').append('<div class="gridbox-small">Teaser tekst</div>');
     $targetbox.find('.box1').append('<div class="text">Nye rundvisninger i botanisk have. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>');
     $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/college-student.jpg" alt="Test">');
+    if ($customImg) {
+        $targetbox.find('.box2 img').attr("src", $customImg);
+    }
     if ($titel) {
         $targetbox.find('.text').text($titel);
     }
