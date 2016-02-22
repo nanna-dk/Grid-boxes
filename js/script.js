@@ -219,7 +219,6 @@ var run289 = function() {
         return this.value ? this.value : null;
     }).get().join(' ')
     $targetbox.removeClass(allClassess).addClass(classesToAdd);
-
     $targetbox.addClass('grey-full text-down');
     $targetbox.find('.gridbox-small, .header').remove();
     $targetbox.find('.box1').append('<div class="gridbox-small">Teaser tekst</div>');
@@ -244,6 +243,7 @@ var size = function() {
 var reset = function() {
     $('select:not(#height)').prop('selectedIndex', 0);
     $('input[type="checkbox"]').prop("checked", false);
+    $('#rubriktekst').prop("checked", true);
     $('input[type="text"]').val('');
     $targetbox.removeClass().addClass('gridbox icon-arrow');
     $targetbox.html($html);

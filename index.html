@@ -142,6 +142,12 @@ h4 {
 #content133 {
     display: block;
 }
+
+@media only screen and (max-width: 792px) {
+    #form {
+        width: 75%;
+    }
+}
 </style>
 
 <body>
@@ -263,7 +269,7 @@ h4 {
             <label>Kun titel</label>
             <input type="checkbox" class="checkbox-header-only">
             <label>Titel og rubriktekst</label>
-            <input type="checkbox" class="checkbox-header-text">
+            <input type="checkbox" id="rubriktekst" class="checkbox-header-text">
         </div>
         <button type="button" id="go">Vis boks!</button>
     </form>
