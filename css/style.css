@@ -107,6 +107,16 @@ body {
     height: 289px;
 }
 
+.flexleft {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.flexleft .box1 {
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
+}
 .with-img .box2 {
     padding: 0;
     overflow: hidden;
@@ -212,10 +222,6 @@ body {
 .grey .header {
     background-color: #f2f2f0;
     color: #666;
-}
-
-.white {
-    /*border-color: #c4c4c4;*/
 }
 
 .white-full,
@@ -440,7 +446,7 @@ body {
     font-size: 18px;
 }
 
-.height55 .box1 .text {
+ .box1 .text {
     padding: 0 17px 7px 15px;
 }
 

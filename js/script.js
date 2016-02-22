@@ -1,15 +1,7 @@
-//Chain FAK color select and checkbox
-$('#fak-colors').change(function() {
-    if ($(this).find('option').prop("selected") == true) {
-        $('.checkbox-border-top').prop("checked", false);
-    } else {
-        $('.checkbox-border-top').prop("checked", true);
-    }
-});
-
 var $selects = $("#height");
 var $targetbox = $(".gridbox");
 var $html = '<div class="box1"><div class="header">Header</div></div><div class="box2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>';
+
 $selects.change(function() {
     $('.container, .box').hide();
     if ($(this).find(":selected").val() == "height55") {
@@ -50,6 +42,7 @@ $("#go").click(function() {
     }
     size();
     preCode();
+    prettyPrint();
 });
 
 
@@ -155,6 +148,7 @@ var run133 = function() {
         return this.value ? this.value : null;
     }).get().join(' ');
     $targetbox.removeClass(allClassess).addClass(classesToAdd);
+    $targetbox.addClass('icon-arrow');
     if ($('.checkbox-border-top').is(':checked')) {
         $targetbox.addClass('border-top');
     } else {
@@ -183,6 +177,13 @@ var run133 = function() {
     }
     if ($text) {
         $targetbox.find('.box2').text($text);
+    }
+    //flexleft if box spans more than 1/3 of the columns
+    if ($targetbox.outerWidth() > 235) {
+        $targetbox.addClass('flexleft');
+        $('<div class="text">Nye rundvisninger</div>').insertAfter($targetbox.find('.box1 .header'));
+    } else {
+        $targetbox.removeClass('flexleft');
     }
     $(".container").fadeIn();
 }
@@ -234,9 +235,8 @@ var run289 = function() {
 }
 
 var size = function() {
-    var thisBox = $('.gridbox:visible');
-    var width = thisBox.outerWidth();
-    var height = thisBox.outerHeight();
+    var width = $targetbox.outerWidth();
+    var height = $targetbox.outerHeight();
     $("#size").html('<span>Højde: ' + height + 'px, width: ' + width + 'px.</span>')
 }
 
@@ -246,10 +246,28 @@ var reset = function() {
     $('#rubriktekst').prop("checked", true);
     $('input[type="text"]').val('');
     $targetbox.removeClass().addClass('gridbox icon-arrow');
-    $targetbox.html($html);
+    $('.counter').text(' ');
+    $targetbox.html($html).addClass('icon-arrow');
 }
 
 var preCode = function() {
-    var boxCode = $('.container:visible').html();
+    var boxCode = $('.container').html();
     $("#result pre").fadeIn().text(boxCode);
 }
+
+$(".count").keyup(function() {
+    var c = 0;
+    $.each($(".count"), function() {
+        c += $(this).val().length;
+    });
+    $(this).next('.counter').text(c);
+});
+
+//Chain FAK color select and checkbox
+$('#fak-colors').change(function() {
+    if ($(this).find('option').prop("selected") == true) {
+        $('.checkbox-border-top').prop("checked", false);
+    } else {
+        $('.checkbox-border-top').prop("checked", true);
+    }
+});
