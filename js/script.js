@@ -42,6 +42,7 @@ $("#go").click(function() {
     }
     size();
     preCode();
+    $("#result pre").removeClass('prettyprinted');
     prettyPrint();
 });
 
@@ -175,15 +176,18 @@ var run133 = function() {
     if ($titel) {
         $targetbox.find('.header').text($titel);
     }
-    if ($text) {
-        $targetbox.find('.box2').text($text);
-    }
     //flexleft if box spans more than 1/3 of the columns
     if ($targetbox.outerWidth() > 235) {
         $targetbox.addClass('flexleft');
         $('<div class="text">Nye rundvisninger</div>').insertAfter($targetbox.find('.box1 .header'));
+        $targetbox.removeClass('icon-arrow');
     } else {
         $targetbox.removeClass('flexleft');
+    }
+    if ($text && $targetbox.outerWidth() < 235) {
+        $targetbox.find('.box2').text($text);
+    } else if ($text && $targetbox.outerWidth() > 235) {
+        $targetbox.find('.text').text($text);
     }
     $(".container").fadeIn();
 }
@@ -247,6 +251,7 @@ var reset = function() {
     $('input[type="text"]').val('');
     $targetbox.removeClass().addClass('gridbox icon-arrow');
     $('.counter').text(' ');
+    $("#result pre").removeClass('prettyprinted');
     $targetbox.html($html).addClass('icon-arrow');
 }
 
