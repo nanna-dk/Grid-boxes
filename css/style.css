@@ -168,7 +168,7 @@ body {
     color: #fff;
 }
 
-.brown.with-img .header {
+.brown.with-img.text-down .header {
     background-color: rgba(79, 71, 63, 0.8);
     color: #fff;
 }
@@ -183,7 +183,7 @@ body {
     color: #fff;
 }
 
-.red.with-img .header {
+.red.with-img.text-down .header {
     background-color: rgba(144, 26, 30, 0.80);
     color: #fff;
 }
@@ -198,7 +198,7 @@ body {
     color: #fff;
 }
 
-.blue.with-img .header {
+.blue.with-img.text-down .header {
     background-color: rgba(161, 197, 200, 0.80);
     color: #fff;
 }
@@ -213,7 +213,7 @@ body {
     color: #fff;
 }
 
-.green.with-img .header {
+.green.with-img.text-down .header {
     background-color: rgba(160, 183, 99, 0.80);
     color: #fff;
 }
@@ -227,7 +227,7 @@ body {
     color: #666;
 }
 
-.grey.with-img .header {
+.grey.with-img.text-down .header {
     background-color: rgba(242, 242, 240, 0.80);
     color: #666;
 }
@@ -238,7 +238,7 @@ body {
     color: #666;
 }
 
-.white.with-img .header {
+.white.with-img.text-down .header {
     background-color: rgba(255, 255, 255, 0.80);
     color: #666;
 }
