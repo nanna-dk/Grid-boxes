@@ -59,7 +59,7 @@ var run55 = function() {
         return this.value ? this.value : null;
     }).get().join(' ');
     $targetbox.removeClass(allClassess).addClass(classesToAdd);
-    $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/college-student.jpg" alt="Test">');
+    $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/235_foto.jpg" alt="Test">');
 
     if ($('.checkbox-header-only').is(':checked')) {
         $targetbox.addClass('header-only');
@@ -79,7 +79,7 @@ var run55 = function() {
         $targetbox.addClass('with-img');
         $targetbox.find('.box2 img').remove();
         $targetbox.find('.box2').show();
-        $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/college-student.jpg" alt="Test">');
+        $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/235_foto.jpg" alt="Test">');
     }
     if ($customImg) {
         $targetbox.find('.box2 img').attr("src", $customImg);
@@ -164,7 +164,7 @@ var run133 = function() {
         $targetbox.addClass('with-img');
         $targetbox.find('.box2 img').remove();
         $targetbox.find('.box2').show();
-        $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/college-student.jpg" alt="Test">');
+        $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/235_foto.jpg" alt="Test">');
     } else {
         $targetbox.removeClass('with-img');
         $targetbox.find('.box2').show().text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.');
@@ -202,7 +202,7 @@ var run185 = function() {
         return this.value ? this.value : null;
     }).get().join(' ');
     $targetbox.removeClass(allClassess).addClass(classesToAdd);
-    $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/college-student.jpg" alt="Test">');
+    $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/235_foto.jpg" alt="Test">');
     if ($('.checkbox-border-top').is(':checked')) {
         $targetbox.addClass('border-top');
     } else {
@@ -228,7 +228,7 @@ var run289 = function() {
     $targetbox.find('.gridbox-small, .header').remove();
     $targetbox.find('.box1').append('<div class="gridbox-small">Teaser tekst</div>');
     $targetbox.find('.box1').append('<div class="text">Nye rundvisninger i botanisk have. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>');
-    $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/college-student.jpg" alt="Test">');
+    $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/235_foto.jpg" alt="Test">');
     if ($customImg) {
         $targetbox.find('.box2 img').attr("src", $customImg);
     }
