@@ -241,7 +241,7 @@ var run289 = function() {
 var size = function() {
     var width = $targetbox.outerWidth();
     var height = $targetbox.outerHeight();
-    $("#size").html('<span>Højde: ' + height + 'px, width: ' + width + 'px.</span>')
+    $("#size").html('<span>Højde: ' + height + 'px, bredde: ' + width + 'px.</span>')
 }
 
 var reset = function() {
