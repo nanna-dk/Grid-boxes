@@ -23,7 +23,7 @@ $selects.change(function() {
     $("#result pre").hide();
 });
 
-$("#go").click(function() {
+$(".go").click(function() {
     $targetbox.html($html);
     if ($selects.find(":selected").val() == "height289") {
         run289();
@@ -42,7 +42,6 @@ $("#go").click(function() {
     }
     size();
     preCode();
-    $("#result pre").removeClass('prettyprinted');
     prettyPrint();
 });
 
@@ -187,7 +186,7 @@ var run133 = function() {
     } else {
         $targetbox.removeClass('flexleft');
     }
-    if ($text && $targetbox.outerWidth() < 235) {
+    if ($text && $targetbox.outerWidth() <= 235) {
         $targetbox.find('.box2').text($text);
     } else if ($text && $targetbox.outerWidth() > 235) {
         $targetbox.find('.text').text($text);
@@ -259,6 +258,7 @@ var reset = function() {
 }
 
 var preCode = function() {
+    $("#result pre").removeClass('prettyprinted');
     var boxCode = $('.container').html();
     $("#result pre").fadeIn().text(boxCode);
 }
