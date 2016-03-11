@@ -179,6 +179,7 @@ var run133 = function() {
     //If desktop, if the box spans more than one column, if box contains an image
     if ($(window).width() > 698 && $targetbox.outerWidth() > 235 && $targetbox.hasClass("with-img")) {
         $targetbox.find('text').remove();
+        $targetbox.removeClass('text-down');
         $targetbox.addClass('flexleft');
         $('<div class="text">Nye rundvisninger</div>').insertAfter($targetbox.find('.box1 .header'));
         $targetbox.removeClass('icon-arrow');
