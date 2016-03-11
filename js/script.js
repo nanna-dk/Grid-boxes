@@ -1,5 +1,5 @@
 var $selects = $("#height");
-var $targetbox = $(".gridbox");
+var $this = $(".gridbox");
 var $html = '<div class="box1"><div class="header">Header</div></div><div class="box2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>';
 
 $selects.change(function() {
@@ -24,7 +24,7 @@ $selects.change(function() {
 });
 
 $(".go").click(function() {
-    $targetbox.html($html);
+    $this.html($html);
     if ($selects.find(":selected").val() == "height289") {
         run289();
     }
@@ -57,43 +57,43 @@ var run55 = function() {
     var allClassess = $selects.find("option[value]").map(function() {
         return this.value ? this.value : null;
     }).get().join(' ');
-    $targetbox.removeClass(allClassess).addClass(classesToAdd);
-    $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/235_foto.jpg" alt="Test">');
+    $this.removeClass(allClassess).addClass(classesToAdd);
+    $this.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/235_foto.jpg" alt="Test">');
 
     if ($('.checkbox-header-only').is(':checked')) {
-        $targetbox.addClass('header-only');
+        $this.addClass('header-only');
     } else {
-        $targetbox.removeClass('header-only');
+        $this.removeClass('header-only');
     }
     if ($('.checkbox-header-text').is(':checked')) {
-        $('<div class="text">Nye rundvisninger</div>').insertAfter($targetbox.find('.box1 .header'));
+        $('<div class="text">Nye rundvisninger</div>').insertAfter($this.find('.box1 .header'));
     } else {
-        $targetbox.find('.text').remove();
+        $this.find('.text').remove();
     }
 
     if ($('.checkbox-55-no-img').is(':checked')) {
-        $targetbox.removeClass('with-img img-right img-left');
-        $targetbox.find('.box2').hide();
+        $this.removeClass('with-img img-right img-left');
+        $this.find('.box2').hide();
     } else {
-        $targetbox.addClass('with-img');
-        $targetbox.find('.box2 img').remove();
-        $targetbox.find('.box2').show();
-        $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/235_foto.jpg" alt="Test">');
+        $this.addClass('with-img');
+        $this.find('.box2 img').remove();
+        $this.find('.box2').show();
+        $this.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/235_foto.jpg" alt="Test">');
     }
     if ($customImg) {
-        $targetbox.find('.box2 img').attr("src", $customImg);
+        $this.find('.box2 img').attr("src", $customImg);
         $('.checkbox-img').prop("checked", true);
     }
-    if ($targetbox.hasClass('img-right')) {
-        $targetbox.removeClass('icon-arrow');
+    if ($this.hasClass('img-right')) {
+        $this.removeClass('icon-arrow');
     } else {
-        $targetbox.addClass('icon-arrow');
+        $this.addClass('icon-arrow');
     }
     if ($titel) {
-        $targetbox.find('.header').text($titel);
+        $this.find('.header').text($titel);
     }
     if ($text) {
-        $targetbox.find('.text').text($text);
+        $this.find('.text').text($text);
     }
     $(".container").fadeIn();
 }
@@ -108,30 +108,30 @@ var run81 = function() {
     var allClassess = $selects.find("option[value]").map(function() {
         return this.value ? this.value : null;
     }).get().join(' ');
-    $targetbox.removeClass(allClassess).addClass(classesToAdd);
+    $this.removeClass(allClassess).addClass(classesToAdd);
 
     if ($('.checkbox-header-only').is(':checked')) {
-        $targetbox.addClass('header-only');
-        $targetbox.find('.box2').hide();
+        $this.addClass('header-only');
+        $this.find('.box2').hide();
     } else {
-        $targetbox.removeClass('header-only');
-        $targetbox.find('.box2').show();
+        $this.removeClass('header-only');
+        $this.find('.box2').show();
     }
     if ($('.checkbox-header-text').is(':checked')) {
-        $targetbox.find('.box2').show();
+        $this.find('.box2').show();
     } else {
-        $targetbox.find('.box2').hide();
+        $this.find('.box2').hide();
     }
     if ($('.checkbox-border-top').is(':checked')) {
-        $targetbox.addClass('border-top');
+        $this.addClass('border-top');
     } else {
-        $targetbox.removeClass('border-top');
+        $this.removeClass('border-top');
     }
     if ($titel) {
-        $targetbox.find('.header').text($titel);
+        $this.find('.header').text($titel);
     }
     if ($text) {
-        $targetbox.find('.box2').text($text);
+        $this.find('.box2').text($text);
     }
     $(".container").fadeIn();
 }
@@ -147,49 +147,49 @@ var run133 = function() {
     var allClassess = $selects.find("option[value]").map(function() {
         return this.value ? this.value : null;
     }).get().join(' ');
-    $targetbox.removeClass(allClassess).addClass(classesToAdd);
-    $targetbox.addClass('icon-arrow');
+    $this.removeClass(allClassess).addClass(classesToAdd);
+    $this.addClass('icon-arrow');
     if ($('.checkbox-border-top').is(':checked')) {
-        $targetbox.addClass('border-top');
+        $this.addClass('border-top');
     } else {
-        $targetbox.removeClass('border-top');
+        $this.removeClass('border-top');
     }
     if ($('.checkbox-titel-down').is(':checked')) {
-        $targetbox.addClass('text-down');
+        $this.addClass('text-down');
     } else {
-        $targetbox.removeClass('text-down');
+        $this.removeClass('text-down');
     }
     if ($('.checkbox-img').is(':checked')) {
-        $targetbox.addClass('with-img');
-        $targetbox.find('.box2 img').remove();
-        $targetbox.find('.box2').show();
-        $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/235_foto.jpg" alt="Test">');
+        $this.addClass('with-img');
+        $this.find('.box2 img').remove();
+        $this.find('.box2').show();
+        $this.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/235_foto.jpg" alt="Test">');
     } else {
-        $targetbox.removeClass('with-img');
-        $targetbox.find('.box2').show().text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.');
+        $this.removeClass('with-img');
+        $this.find('.box2').show().text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.');
     }
     if ($customImg) {
-        $targetbox.find('.box2 img').attr("src", $customImg);
+        $this.find('.box2 img').attr("src", $customImg);
         $('.checkbox-img').prop("checked", true);
     }
     if ($titel) {
-        $targetbox.find('.header').text($titel);
+        $this.find('.header').text($titel);
     }
     //If desktop, if the box spans more than one column, if box contains an image
-    if ($(window).width() > 698 && $targetbox.outerWidth() > 235 && $targetbox.hasClass("with-img")) {
-        $targetbox.find('text').remove();
-        $targetbox.removeClass('text-down');
-        $targetbox.addClass('flexleft');
-        $('<div class="text">Nye rundvisninger</div>').insertAfter($targetbox.find('.box1 .header'));
-        $targetbox.removeClass('icon-arrow');
+    if ($(window).width() > 698 && $this.outerWidth() > 235 && $this.hasClass("with-img")) {
+        $this.find('text').remove();
+        $this.removeClass('text-down');
+        $this.addClass('flexleft');
+        $('<div class="text">Nye rundvisninger</div>').insertAfter($this.find('.box1 .header'));
+        $this.removeClass('icon-arrow');
         $('.checkbox-titel-down').prop("checked", false);
     } else {
-        $targetbox.removeClass('flexleft');
+        $this.removeClass('flexleft');
     }
-    if ($text && $targetbox.outerWidth() <= 235) {
-        $targetbox.find('.box2').text($text);
-    } else if ($text && $targetbox.outerWidth() > 235) {
-        $targetbox.find('.text').text($text);
+    if ($text && $this.outerWidth() <= 235) {
+        $this.find('.box2').text($text);
+    } else if ($text && $this.outerWidth() > 235) {
+        $this.find('.text').text($text);
     }
     $(".container").fadeIn();
 }
@@ -203,15 +203,15 @@ var run185 = function() {
     var allClassess = $selects.find("option[value]").map(function() {
         return this.value ? this.value : null;
     }).get().join(' ');
-    $targetbox.removeClass(allClassess).addClass(classesToAdd);
-    $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/235_foto.jpg" alt="Test">');
+    $this.removeClass(allClassess).addClass(classesToAdd);
+    $this.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/235_foto.jpg" alt="Test">');
     if ($('.checkbox-border-top').is(':checked')) {
-        $targetbox.addClass('border-top');
+        $this.addClass('border-top');
     } else {
-        $targetbox.removeClass('border-top');
+        $this.removeClass('border-top');
     }
     if ($titel) {
-        $targetbox.find('.header').text($titel);
+        $this.find('.header').text($titel);
     }
     $(".container").fadeIn();
 }
@@ -225,24 +225,24 @@ var run289 = function() {
     var allClassess = $selects.find("option[value]").map(function() {
         return this.value ? this.value : null;
     }).get().join(' ')
-    $targetbox.removeClass(allClassess).addClass(classesToAdd);
-    $targetbox.addClass('grey-full text-down');
-    $targetbox.find('.gridbox-small, .header').remove();
-    $targetbox.find('.box1').append('<div class="gridbox-small">Teaser tekst</div>');
-    $targetbox.find('.box1').append('<div class="text">Nye rundvisninger i botanisk have. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>');
-    $targetbox.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/235_foto.jpg" alt="Test">');
+    $this.removeClass(allClassess).addClass(classesToAdd);
+    $this.addClass('grey-full text-down');
+    $this.find('.gridbox-small, .header').remove();
+    $this.find('.box1').append('<div class="gridbox-small">Teaser tekst</div>');
+    $this.find('.box1').append('<div class="text">Nye rundvisninger i botanisk have. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>');
+    $this.find('.box2').text('').append('<img src="http://cms.ku.dk/testarea/nanna/gridforside/billeder/235_foto.jpg" alt="Test">');
     if ($customImg) {
-        $targetbox.find('.box2 img').attr("src", $customImg);
+        $this.find('.box2 img').attr("src", $customImg);
     }
     if ($titel) {
-        $targetbox.find('.text').text($titel);
+        $this.find('.text').text($titel);
     }
     $(".container").fadeIn();
 }
 
 var size = function() {
-    var width = $targetbox.outerWidth();
-    var height = $targetbox.outerHeight();
+    var width = $this.outerWidth();
+    var height = $this.outerHeight();
     $("#size").html('<span>Højde: ' + height + 'px, bredde: ' + width + 'px.</span>')
 }
 
@@ -251,10 +251,10 @@ var reset = function() {
     $('input[type="checkbox"]').prop("checked", false);
     $('#rubriktekst').prop("checked", true);
     $('input[type="text"]').val('');
-    $targetbox.removeClass().addClass('gridbox icon-arrow');
+    $this.removeClass().addClass('gridbox icon-arrow');
     $('.counter').text(' ');
     $("#result pre").removeClass('prettyprinted');
-    $targetbox.html($html).addClass('icon-arrow');
+    $this.html($html).addClass('icon-arrow');
 }
 
 var preCode = function() {
