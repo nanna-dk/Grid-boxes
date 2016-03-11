@@ -161,14 +161,14 @@ body {
     border: 1px solid #4f473f;
 }
 
-.brown-full,
+.brown-full, .brown-full :first-child,
 .brown-full .header,
 .brown .header {
     background-color: #4f473f;
     color: #fff;
 }
 
-.brown.with-img.text-down .header {
+.brown.with-img.text-down .header, .height133.brown-full.text-down .box1 .header {
     background-color: rgba(79, 71, 63, 0.8);
     color: #fff;
 }
@@ -177,13 +177,14 @@ body {
     border: 1px solid #901a1e;
 }
 
-.red-full, .red .header,
+.red-full, .red-full :first-child,
+.red .header,
 .red-full .header {
     background-color: #901a1e;
     color: #fff;
 }
 
-.red.with-img.text-down .header {
+.red.with-img.text-down .header, .height133.red-full.text-down .box1 .header {
     background-color: rgba(144, 26, 30, 0.80);
     color: #fff;
 }
@@ -192,13 +193,14 @@ body {
     border: 1px solid #a1c5c8;
 }
 
-.blue-full, .blue .header,
+.blue-full, .blue-full :first-child,
+.blue .header,
 .blue-full .header {
     background-color: #a1c5c8;
     color: #fff;
 }
 
-.blue.with-img.text-down .header {
+.blue.with-img.text-down .header, .height133.blue-full.text-down .box1 .header {
     background-color: rgba(161, 197, 200, 0.80);
     color: #fff;
 }
@@ -207,38 +209,42 @@ body {
     border: 1px solid #a0b763;
 }
 
-.green-full, .green .header,
+.green-full, .green-full :first-child,
+.green .header,
 .green-full .header {
     background-color: #a0b763;
     color: #fff;
 }
 
-.green.with-img.text-down .header {
+.green.with-img.text-down .header, .height133.green-full.text-down .box1 .header {
     background-color: rgba(160, 183, 99, 0.80);
     color: #fff;
 }
+
 .grey-border {
     border: 1px #c4c4c4;
 }
 
-.grey-full, .grey .header,
+.grey-full, .grey-full :first-child,
+.grey .header,
 .grey-full .header {
     background-color: #f2f2f0;
     color: #666;
 }
 
-.grey.with-img.text-down .header {
+.grey.with-img.text-down .header, .height133.grey-full.text-down .box1 .header {
     background-color: rgba(242, 242, 240, 0.80);
     color: #666;
 }
 
-.white-full, .white .header,
+.white-full, .white-full :first-child,
+.white .header,
 .white-full .header {
     background-color: #fff;
     color: #666;
 }
 
-.white.with-img.text-down .header {
+.white.with-img.text-down .header, .height133.white-full.text-down .box1 .header {
     background-color: rgba(255, 255, 255, 0.80);
     color: #666;
 }
@@ -249,6 +255,8 @@ body {
 .grey-full.icon-arrow:before {
     color: #666;
 }
+
+
 
 
 /* FAK-farver */
@@ -494,15 +502,32 @@ body {
 }
 
 @media only screen and (max-width: 888px) {
+    .flexleft.height133.icon-arrow:before {
+        display: block;
+        bottom: 14px;
+        top: auto;
+    }
     .flexleft .text {
         display: none;
     }
-    .height133 {
+    .height133 .text {
+        display: block;
+    }
+    .height133.with-img.text-down .header {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    .height133 .text,
+    .flexleft.height133 .text {
+        display: none;
+    }
+    .height133.with-img {
         -webkit-flex-direction: row;
         -ms-flex-direction: row;
         flex-direction: row;
     }
-    .height133 .box1 {
+    .height133.with-img .box1 {
         -webkit-order: 2;
         -ms-flex-order: 2;
         order: 2;

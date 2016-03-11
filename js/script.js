@@ -176,11 +176,13 @@ var run133 = function() {
     if ($titel) {
         $targetbox.find('.header').text($titel);
     }
-    //flexleft if box spans more than 1/3 of the columns
-    if ($targetbox.outerWidth() > 235) {
+    //If desktop, if the box spans more than one column, if box contains an image
+    if ($(window).width() > 698 && $targetbox.outerWidth() > 235 && $targetbox.hasClass("with-img")) {
+        $targetbox.find('text').remove();
         $targetbox.addClass('flexleft');
         $('<div class="text">Nye rundvisninger</div>').insertAfter($targetbox.find('.box1 .header'));
         $targetbox.removeClass('icon-arrow');
+        $('.checkbox-titel-down').prop("checked", false);
     } else {
         $targetbox.removeClass('flexleft');
     }
@@ -276,3 +278,4 @@ $('#fak-colors').change(function() {
         $('.checkbox-border-top').prop("checked", true);
     }
 });
+$(window).resize(run133);
